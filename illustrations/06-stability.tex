@@ -1,0 +1,32 @@
+\begin{graphillustration}{Три случая в доказательстве $D(G-a)\subseteq D(G)$. Путь $P$ из $M_w\triangle M'$ начинается в $v$; толстые рёбра — $M_w$, штриховые — $M'$. Вершина $w$ свободна в $M_w$, вершина $a$ — в $M'$.}{fig:06-stability}
+\begin{tikzpicture}[font=\small]
+\begin{scope}
+\node[gi vertex] (v) at (0,0) {$v$};
+\node[gi vertex] (p1) at (1,0) {};
+\node[gi vertex] (p2) at (2,0) {};
+\node[gi vertex] (p3) at (3,0) {};
+\draw[gi match] (v) -- (p1); \draw[gi alternate] (p1) -- (p2); \draw[gi match] (p2) -- (p3);
+\node[gi vertex] (p4) at (4,0) {};
+\draw[gi alternate] (p3) -- (p4);
+\node[gi note] at (2,-0.8) {(а) конец ребром $M'$};
+\end{scope}
+\begin{scope}[shift={(5.2,0)}]
+\node[gi vertex] (v) at (0,0) {$v$};
+\node[gi vertex] (p1) at (1,0) {};
+\node[gi vertex] (p2) at (2,0) {};
+\node[gi vertex] (a) at (3,0) {$a$};
+\node[gi free] (w) at (3,1.1) {$w$};
+\draw[gi match] (v) -- (p1); \draw[gi alternate] (p1) -- (p2); \draw[gi match] (p2) -- (a);
+\draw[gi edge,densely dotted] (a) -- (w);
+\node[gi note] at (1.6,-0.8) {(б) конец $a$: добавим $aw$};
+\end{scope}
+\begin{scope}[shift={(9.4,0)}]
+\node[gi vertex] (v) at (0,0) {$v$};
+\node[gi vertex] (p1) at (1,0) {};
+\node[gi vertex] (p2) at (2,0) {};
+\node[gi vertex] (p3) at (3,0) {};
+\draw[gi match] (v) -- (p1); \draw[gi alternate] (p1) -- (p2); \draw[gi match] (p2) -- (p3);
+\node[gi note] at (1.5,-0.8) {(в) $M'$-дополняющий путь};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

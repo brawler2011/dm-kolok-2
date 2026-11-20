@@ -1,0 +1,28 @@
+\begin{graphillustration}{Завершение доказательства Татта: $G-U$ — несвязные клики. Чётные клики разбиваются на пары внутри; в каждой нечётной одна вершина уходит к своей вершине $U$; остаток $U$ — клика с чётным числом вершин.}{fig:04-finish}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (u1) at (0,2) {};
+\node[gi vertex] (u2) at (1.2,2) {};
+\node[gi vertex] (u3) at (2.4,2) {};
+\node[gi vertex] (u4) at (3.6,2) {};
+\node[gi group,fit=(u1)(u2)(u3)(u4),label=above:{$U$ (смежны со всеми)}] {};
+\draw[gi match] (u3) -- (u4);
+\node[gi vertex] (a1) at (-0.6,0) {};
+\node[gi vertex] (a2) at (0.4,0) {};
+\node[gi vertex] (a3) at (-0.1,-0.8) {};
+\draw[gi edge] (a1) -- (a2) -- (a3) -- (a1);
+\draw[gi match] (a2) -- (a3);
+\node[gi vertex] (b1) at (1.8,0) {};
+\draw[gi match] (a1) -- (u1);
+\draw[gi match] (b1) -- (u2);
+\node[gi vertex] (c1) at (3.0,0) {};
+\node[gi vertex] (c2) at (4.0,0) {};
+\node[gi vertex] (c3) at (3.0,-0.9) {};
+\node[gi vertex] (c4) at (4.0,-0.9) {};
+\draw[gi edge] (c1) -- (c2) -- (c4) -- (c3) -- (c1) -- (c4); \draw[gi edge] (c2) -- (c3);
+\draw[gi match] (c1) -- (c2); \draw[gi match] (c3) -- (c4);
+\node[gi group,fit=(a1)(a2)(a3)] {};
+\node[gi group,fit=(b1)] {};
+\node[gi group,fit=(c1)(c2)(c3)(c4)] {};
+\node[gi note,anchor=west] at (4.8,-0.4) {клики $G-U$:\\две нечётные, одна чётная};
+\end{tikzpicture}
+\end{graphillustration}

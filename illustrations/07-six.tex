@@ -1,0 +1,16 @@
+\begin{graphillustration}{Доказательство для шести вершин: у $x$ три соседа $a,b,c$. Любое ребро между ними (пунктир) замыкает треугольник с $x$; если рёбер нет — $\{a,b,c\}$ независимо.}{fig:07-six}
+\begin{tikzpicture}[font=\small]
+\node[gi selected] (x) at (0,1.5) {$x$};
+\node[gi vertex] (a) at (-1.5,0) {$a$};
+\node[gi vertex] (b) at (0,0) {$b$};
+\node[gi vertex] (c) at (1.5,0) {$c$};
+\node[gi vertex] (d) at (2.8,1.2) {};
+\node[gi vertex] (e) at (3.3,0.2) {};
+\draw[gi c1] (x) -- (a); \draw[gi c1] (x) -- (b); \draw[gi c1] (x) -- (c);
+\draw[gi c2] (x) -- (d); \draw[gi c2] (x) -- (e);
+\draw[gi edge,densely dotted] (a) -- (b);
+\draw[gi edge,densely dotted] (b) -- (c);
+\draw[gi edge,densely dotted] (a) to[bend right=30] (c);
+\node[gi note,anchor=west] at (4.2,0.8) {$d_G(x)\ge3$ (сплошные);\\штриховые — рёбра $\overline G$};
+\end{tikzpicture}
+\end{graphillustration}

@@ -1,0 +1,29 @@
+\begin{graphillustration}{Структура из доказательства Кёнига. Толстые рёбра — $M$, крестиком отмечены невозможные рёбра. Покрытие $B=Z_1\cup Y_2$ выделено двойным контуром групп.}{fig:02-konig}
+\begin{tikzpicture}[font=\small]
+\node[gi free] (u1) at (0,2) {};
+\node[gi vertex] (y1a) at (2.2,2) {};
+\node[gi vertex] (y1b) at (3.2,2) {};
+\node[gi vertex] (z1a) at (5.6,2) {};
+\node[gi vertex] (z1b) at (6.6,2) {};
+\node[gi free] (u2) at (0,0) {};
+\node[gi vertex] (y2a) at (2.2,0) {};
+\node[gi vertex] (y2b) at (3.2,0) {};
+\node[gi vertex] (z2a) at (5.6,0) {};
+\node[gi vertex] (z2b) at (6.6,0) {};
+\draw[gi match] (y1a) -- (y2a); \draw[gi match] (y1b) -- (y2b);
+\draw[gi match] (z1a) -- (z2a); \draw[gi match] (z1b) -- (z2b);
+\draw[gi edge] (u1) -- (y2a); \draw[gi edge] (y1a) -- (y2b);
+\draw[gi edge] (z1a) -- (y2b); \draw[gi edge] (z1b) -- (z2a);
+\draw[gi removed] (u1) -- (u2) node[pos=.5,fill=white,inner sep=1pt] {$\times$};
+\draw[gi removed] (y1b) -- (z2a) node[pos=.5,fill=white,inner sep=1pt] {$\times$};
+\node[gi group,fit=(u1),label=above:$U_1$] {};
+\node[gi group,fit=(y1a)(y1b),label=above:$Y_1$] {};
+\node[gi group,double,fit=(z1a)(z1b),label=above:{$Z_1\subseteq B$}] {};
+\node[gi group,fit=(u2),label=below:$U_2$] {};
+\node[gi group,double,fit=(y2a)(y2b),label=below:{$Y_2\subseteq B$}] {};
+\node[gi group,fit=(z2a)(z2b),label=below:$Z_2$] {};
+\node[gi note,anchor=west] at (7.6,2) {$V_1$};
+\node[gi note,anchor=west] at (7.6,0) {$V_2$};
+\node[gi note,anchor=west] at (8.4,1) {$U_1$—$U_2$: дополняющий путь;\\$U_1\cup Y_1$—$Z_2$: $Z_2$ стала бы\\достижимой.};
+\end{tikzpicture}
+\end{graphillustration}

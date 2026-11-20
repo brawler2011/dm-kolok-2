@@ -1,0 +1,24 @@
+\begin{graphillustration}{Конструкция Ловаса для $G=P_4=abcd$. Максимальные независимые множества: $\{a,c\},\{a,d\},\{b,d\}$, $k=3$, $\alpha=2$; $a_a=a_d=2$, $a_b=a_c=1$. В $G'$ ровно $k\alpha=6$ вершин, клика $\{a_1,a_2,b\}$ размера $k$ проецируется в клику $K=\{a,b\}$, пересекающую все три множества.}{fig:14-blowup}
+\begin{tikzpicture}[font=\small]
+\begin{scope}
+\node[gi vertex] (a) at (0,0) {$a$};
+\node[gi vertex] (b) at (1.2,0) {$b$};
+\node[gi vertex] (c) at (2.4,0) {$c$};
+\node[gi vertex] (d) at (3.6,0) {$d$};
+\draw[gi edge] (a) -- (b) -- (c) -- (d);
+\node[gi note] at (1.8,-0.8) {$G=P_4$};
+\end{scope}
+\node[gi note] at (4.8,0) {$\Longrightarrow$};
+\begin{scope}[shift={(6.2,0)}]
+\node[gi selected] (a1) at (0,0.7) {$a_1$};
+\node[gi selected] (a2) at (0,-0.7) {$a_2$};
+\node[gi selected] (b) at (1.4,0) {$b$};
+\node[gi vertex] (c) at (2.8,0) {$c$};
+\node[gi vertex] (d1) at (4.2,0.7) {$d_1$};
+\node[gi vertex] (d2) at (4.2,-0.7) {$d_2$};
+\draw[gi match] (a1) -- (a2); \draw[gi match] (a1) -- (b); \draw[gi match] (a2) -- (b);
+\draw[gi edge] (b) -- (c); \draw[gi edge] (c) -- (d1); \draw[gi edge] (c) -- (d2); \draw[gi edge] (d1) -- (d2);
+\node[gi note] at (2.1,-1.4) {$G'$: $v(G')=6$, $\chi(G')=\omega(G')=3$};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

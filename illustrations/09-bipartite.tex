@@ -1,0 +1,12 @@
+\begin{graphillustration}{Простая нижняя оценка при $m=3$, $n=4$: в $K_{2,3}$ (5 вершин) нет треугольника, а $\alpha=3<4$. Значит, $R(3,4)\ge6$ (истинное значение 9).}{fig:09-bipartite}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (a1) at (0.8,1.2) {};
+\node[gi vertex] (a2) at (2.2,1.2) {};
+\node[gi vertex] (b1) at (0,0) {};
+\node[gi vertex] (b2) at (1.5,0) {};
+\node[gi vertex] (b3) at (3,0) {};
+\foreach \a in {a1,a2} \foreach \b in {b1,b2,b3} \draw[gi edge] (\a) -- (\b);
+\node[gi group,fit=(a1)(a2),label=right:{$m-1=2$}] {};
+\node[gi group,fit=(b1)(b2)(b3),label=right:{$n-1=3$}] {};
+\end{tikzpicture}
+\end{graphillustration}

@@ -1,0 +1,10 @@
+\begin{graphillustration}{Почему цикл длины $\ge4$ не интервален: у $I_1$ наименьший правый конец $r_1$. Оба соседа $v_2,v_k$ пересекают $I_1$ и продолжаются правее $r_1$, поэтому пересекаются между собой около $r_1$ (серая полоса) — появляется хорда $v_2v_k$.}{fig:13-c4}
+\begin{tikzpicture}[font=\small]
+\fill[black!12] (2.7,-0.2) rectangle (3.0,1.6);
+\draw[gi interval] (0.5,1.3) -- (3.0,1.3) node[right] {$I_1$};
+\draw[gi interval] (1.5,0.75) -- (4.8,0.75) node[right] {$I_2$};
+\draw[gi interval] (2.7,0.2) -- (5.6,0.2) node[right] {$I_k$};
+\draw[->] (0,-0.4) -- (6.6,-0.4);
+\node[gi note] at (3.0,-0.7) {$r_1$};
+\end{tikzpicture}
+\end{graphillustration}

@@ -1,0 +1,21 @@
+\begin{graphillustration}{Инверсия дополняющего пути $a_1\ldots a_6$: рёбра пути меняют статус, свободные концы становятся покрытыми, $|M|$ растёт на 1.}{fig:01-augment}
+\begin{tikzpicture}[font=\small]
+\foreach \i/\x in {1/0,2/1.1,3/2.2,4/3.3,5/4.4,6/5.5} {
+  \ifnum\i=1 \node[gi free] (a\i) at (\x,0) {$a_{\i}$};
+  \else\ifnum\i=6 \node[gi free] (a\i) at (\x,0) {$a_{\i}$};
+  \else \node[gi vertex] (a\i) at (\x,0) {$a_{\i}$}; \fi\fi
+}
+\draw[gi edge] (a1) -- (a2); \draw[gi match] (a2) -- (a3);
+\draw[gi edge] (a3) -- (a4); \draw[gi match] (a4) -- (a5);
+\draw[gi edge] (a5) -- (a6);
+\node[gi note] at (2.75,-0.8) {$M$: 2 ребра на пути};
+\node[gi note] at (6.6,0) {$\Longrightarrow$};
+\begin{scope}[shift={(7.6,0)}]
+\foreach \i/\x in {1/0,2/1.1,3/2.2,4/3.3,5/4.4,6/5.5} \node[gi vertex] (b\i) at (\x,0) {$a_{\i}$};
+\draw[gi match] (b1) -- (b2); \draw[gi edge] (b2) -- (b3);
+\draw[gi match] (b3) -- (b4); \draw[gi edge] (b4) -- (b5);
+\draw[gi match] (b5) -- (b6);
+\node[gi note] at (2.75,-0.8) {$M\triangle E(P)$: 3 ребра};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

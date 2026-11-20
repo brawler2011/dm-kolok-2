@@ -1,0 +1,17 @@
+\begin{graphillustration}{Шаг индукции в лемме: копия $T_{n-1}$ найдена в $H-U$; вершина $a'$ (образ соседа удалённого листа) смежна с некоторой $x\in U$ по максимальности $U$. Ребро $a'x$ (толстое) достраивает $T_n$.}{fig:12-step}
+\begin{tikzpicture}[font=\small]
+\node[draw,rounded corners,minimum width=5.2cm,minimum height=2.4cm] (HU) at (0,0) {};
+\node[gi note,anchor=north west] at (-2.55,1.15) {$H-U$};
+\node[gi vertex] (t1) at (-1.6,-0.2) {};
+\node[gi vertex] (t2) at (-0.6,0.4) {};
+\node[gi vertex] (t3) at (-0.6,-0.7) {};
+\node[gi vertex] (t4) at (0.5,0.4) {};
+\node[gi selected] (a) at (1.6,0.4) {$a'$};
+\draw[gi edge] (t1) -- (t2) -- (t4) -- (a); \draw[gi edge] (t1) -- (t3);
+\node[draw,rounded corners,minimum width=1.4cm,minimum height=2.4cm] (U) at (4.2,0) {};
+\node[gi note,anchor=north] at (4.2,1.6) {$U$, $|U|\le m-1$};
+\node[gi vertex] (x) at (4.2,0.6) {$x$};
+\node[gi vertex] (y) at (4.2,-0.6) {};
+\draw[gi match] (a) -- (x);
+\end{tikzpicture}
+\end{graphillustration}

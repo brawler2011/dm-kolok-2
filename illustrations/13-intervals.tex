@@ -1,0 +1,19 @@
+\begin{graphillustration}{Пример интервального графа. Пересекающиеся интервалы дают рёбра; вертикальная прямая пересекает 3 интервала — это $\omega=\chi=3$ (клика $\{2,3,4\}$). Цифра в вершине — номер интервала.}{fig:13-intervals}
+\begin{tikzpicture}[font=\small]
+\draw[gi interval] (0,2.0) -- (2.0,2.0) node[right] {$I_1$};
+\draw[gi interval] (1.2,1.4) -- (3.6,1.4) node[right] {$I_2$};
+\draw[gi interval] (2.6,0.8) -- (5.0,0.8) node[right] {$I_3$};
+\draw[gi interval] (3.0,0.2) -- (4.2,0.2) node[right] {$I_4$};
+\draw[gi interval] (4.6,1.6) -- (6.2,1.6) node[right] {$I_5$};
+\draw[->] (-0.3,-0.4) -- (6.9,-0.4) node[right] {$\R$};
+\draw[gi removed] (3.3,-0.6) -- (3.3,2.3);
+\begin{scope}[shift={(9,1)}]
+\node[gi vertex] (1) at (-1.6,0.6) {1};
+\node[gi vertex] (2) at (-0.6,0.6) {2};
+\node[gi vertex] (3) at (0.6,0.6) {3};
+\node[gi vertex] (4) at (0,-0.5) {4};
+\node[gi vertex] (5) at (1.6,0.6) {5};
+\draw[gi edge] (1) -- (2) -- (3) -- (5); \draw[gi edge] (2) -- (4) -- (3);
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

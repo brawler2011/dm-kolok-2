@@ -1,0 +1,32 @@
+\begin{graphillustration}{Компоненты $M\triangle M'$: чётный цикл и пути. Толстые рёбра — $M$, штриховые — $M'$. В пути справа рёбер $M'$ больше; это $M$-дополняющий путь.}{fig:01-symdiff}
+\begin{tikzpicture}[font=\small]
+\begin{scope}
+\node[gi vertex] (c1) at (0,1) {};
+\node[gi vertex] (c2) at (1.2,1) {};
+\node[gi vertex] (c3) at (1.8,0) {};
+\node[gi vertex] (c4) at (1.2,-1) {};
+\node[gi vertex] (c5) at (0,-1) {};
+\node[gi vertex] (c6) at (-0.6,0) {};
+\draw[gi match] (c1) -- (c2); \draw[gi alternate] (c2) -- (c3);
+\draw[gi match] (c3) -- (c4); \draw[gi alternate] (c4) -- (c5);
+\draw[gi match] (c5) -- (c6); \draw[gi alternate] (c6) -- (c1);
+\node[gi note] at (0.6,-1.7) {чётный цикл: поровну};
+\end{scope}
+\begin{scope}[shift={(3.6,0)}]
+\node[gi vertex] (p1) at (0,0.6) {};
+\node[gi vertex] (p2) at (1.1,0.6) {};
+\node[gi vertex] (p3) at (2.2,0.6) {};
+\draw[gi match] (p1) -- (p2); \draw[gi alternate] (p2) -- (p3);
+\node[gi note] at (1.1,-0.3) {чётный путь:\\поровну};
+\end{scope}
+\begin{scope}[shift={(7.2,0)}]
+\node[gi free] (q1) at (0,0.6) {};
+\node[gi vertex] (q2) at (1.1,0.6) {};
+\node[gi vertex] (q3) at (2.2,0.6) {};
+\node[gi free] (q4) at (3.3,0.6) {};
+\draw[gi alternate] (q1) -- (q2); \draw[gi match] (q2) -- (q3);
+\draw[gi alternate] (q3) -- (q4);
+\node[gi note] at (1.65,-0.3) {нечётный путь: $M'$ на 1 больше,\\концы свободны в $M$};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

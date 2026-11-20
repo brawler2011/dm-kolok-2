@@ -1,0 +1,11 @@
+\begin{graphillustration}{Пример: независимое множество $I=\{a,c\}$ (двойной контур) и его дополнение — вершинное покрытие $\{b,d,e\}$. Каждое ребро имеет конец вне $I$.}{fig:03-cover}
+\begin{tikzpicture}[font=\small]
+\node[gi selected] (a) at (90:1.2) {$a$};
+\node[gi vertex] (b) at (162:1.2) {$b$};
+\node[gi selected] (c) at (234:1.2) {$c$};
+\node[gi vertex] (d) at (306:1.2) {$d$};
+\node[gi vertex] (e) at (18:1.2) {$e$};
+\draw[gi edge] (a) -- (b) -- (c) -- (d) -- (e) -- (a);
+\node[gi note,anchor=west] at (2.2,0.3) {$C_5$: $\alpha=2$, $\beta=3$,\\$\alpha+\beta=5=n$};
+\end{tikzpicture}
+\end{graphillustration}

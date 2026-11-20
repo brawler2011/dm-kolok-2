@@ -1,0 +1,11 @@
+\begin{graphillustration}{Шаг доказательства Гринвуда–Глисона при $k=3$: рёбра из $v$ делятся по цветам на $A_1,A_2,A_3$. Хотя бы одно $|A_i|\ge R_i$; внутри него ищем $K_{n_i-1}$ цвета $i$ (с $v$ — $K_{n_i}$) или $K_{n_j}$ другого цвета.}{fig:10-pigeon}
+\begin{tikzpicture}[font=\small]
+\node[gi selected] (v) at (0,0) {$v$};
+\foreach \k/\ang/\sty/\lab in {1/150/gi c1/A_1,2/30/gi c2/A_2,3/270/gi c3/A_3} {
+  \node[draw,ellipse,minimum width=2.2cm,minimum height=1.2cm] (E\k) at (\ang:2.6) {};
+  \node[gi note] at ($(\ang:2.6)+(1.45,0.45)$) {$\lab$};
+  \foreach \d [count=\j] in {-0.6,0,0.6} {\node[gi small] (p\k-\j) at ($(\ang:2.6)+(\d,-0.1)$) {}; \draw[\sty] (v) -- (p\k-\j);}
+}
+\node[gi note,anchor=west] at (4.2,-1.4) {$\sum|A_i|=N-1=\sum(R_i-1)+1$\\$\Rightarrow\ \exists i:\ |A_i|\ge R_i$};
+\end{tikzpicture}
+\end{graphillustration}

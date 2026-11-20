@@ -1,0 +1,14 @@
+\begin{graphillustration}{Разбиение в доказательстве Эрдёша–Секереша: $v$ смежна со всеми вершинами $A$ и ни с одной вершиной $B$. Клика $K_{m-1}$ в $A$ дополняется вершиной $v$ до $K_m$; независимое множество размера $n-1$ в $B$ — до размера $n$.}{fig:08-split}
+\begin{tikzpicture}[font=\small]
+\node[gi selected] (v) at (0,0) {$v$};
+\node[draw,ellipse,minimum width=2.8cm,minimum height=1.8cm] (A) at (-2.8,-1.8) {};
+\node[draw,ellipse,minimum width=2.8cm,minimum height=1.8cm] (B) at (2.8,-1.8) {};
+\node[gi note] at (-2.8,-3.0) {$A=N(v)$, $|A|\ge R(m-1,n)$?};
+\node[gi note] at (2.8,-3.0) {$B=V\setminus N[v]$, $|B|\ge R(m,n-1)$?};
+\foreach \x/\y [count=\i] in {-3.6/-1.5,-2.8/-1.2,-2.0/-1.5,-3.2/-2.2,-2.4/-2.2}
+  {\node[gi small] (a\i) at (\x,\y) {}; \draw[gi c1] (v) -- (a\i);}
+\foreach \x/\y [count=\i] in {2.0/-1.5,2.8/-1.2,3.6/-1.5,2.4/-2.2,3.2/-2.2}
+  {\node[gi small] (b\i) at (\x,\y) {}; \draw[gi c2,black!45] (v) -- (b\i);}
+\node[gi note,anchor=west] at (5.0,0) {сплошные — рёбра $G$\\штриховые — рёбра $\overline G$};
+\end{tikzpicture}
+\end{graphillustration}

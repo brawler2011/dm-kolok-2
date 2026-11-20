@@ -1,0 +1,17 @@
+\begin{graphillustration}{Сведение Шура к числам Рамсея: ребро $uv$ получает цвет числа $|u-v|$. Одноцветный треугольник $a<b<c$ даёт $x=b-a$, $y=c-b$, $z=c-a$ одного цвета, $x+y=z$. Справа — раскраска $1,\ldots,4$ в два цвета без решения (синий контур — цвет 1, двойной серый — цвет 2): оценка $n=R(3,3)-1=5$ точна.}{fig:10-schur}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (a) at (0,0) {$a$};
+\node[gi vertex] (b) at (2.4,0) {$b$};
+\node[gi vertex] (c) at (1.2,1.8) {$c$};
+\draw[gi c1] (a) -- node[below] {$b-a$} (b);
+\draw[gi c1] (b) -- node[right] {$c-b$} (c);
+\draw[gi c1] (a) -- node[left] {$c-a$} (c);
+\begin{scope}[shift={(5.0,0.8)}]
+\node[gi vertex,draw=cbBlue,line width=1.4pt] at (0,0) {$1$};
+\node[gi selected] at (0.9,0) {$2$};
+\node[gi selected] at (1.8,0) {$3$};
+\node[gi vertex,draw=cbBlue,line width=1.4pt] at (2.7,0) {$4$};
+\node[gi note,anchor=west] at (3.3,0) {$1+1=2$, $1+3=4$, $2+2=4$\\— везде разные цвета};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

@@ -1,0 +1,8 @@
+\begin{graphillustration}{Раскраска $K_5$ без одноцветного треугольника: цвет 1 — цикл $C_5$, цвет 2 — пентаграмма (тоже $C_5$). Поэтому $R(3,3)>5$.}{fig:07-c5}
+\begin{tikzpicture}[font=\small]
+\foreach \i in {0,...,4} \node[gi vertex] (v\i) at (90+72*\i:1.5) {$\i$};
+\foreach \i [evaluate=\i as \j using {int(mod(\i+1,5))}] in {0,...,4} \draw[gi c1] (v\i) -- (v\j);
+\foreach \i [evaluate=\i as \j using {int(mod(\i+2,5))}] in {0,...,4} \draw[gi c2] (v\i) -- (v\j);
+\node[gi note,anchor=west] at (2.3,0.4) {сплошные: $G=C_5$\\штриховые: $\overline G\cong C_5$};
+\end{tikzpicture}
+\end{graphillustration}

@@ -1,0 +1,29 @@
+\begin{graphillustration}{Случай 2 леммы о кликах. Слева цикл $C$ из $M_1\triangle M_2$: толстые рёбра — $M_1$, штриховые — $M_2$; $xz\in M_1$ и $yw\in M_2$ — добавленные рёбра. Справа путь $P$: дуга $x\ldots y$, ребро $yz\in E$, дуга $z\ldots w$; рёбра $P$ через одно (толстые) дают совершенное паросочетание на $V(C)$.}{fig:04-cycle}
+\begin{tikzpicture}[font=\small]
+\begin{scope}
+\foreach \i/\a/\l in {0/90/y,1/30/w,2/-30/p,3/-90/z,4/-150/x,5/150/q}
+  \node[gi vertex] (c\i) at (\a:1.4) {$\l$};
+\draw[gi alternate] (c0) -- node[above right,inner sep=1pt] {\scriptsize новое} (c1);
+\draw[gi match] (c1) -- (c2);
+\draw[gi alternate] (c2) -- (c3);
+\draw[gi match,dash pattern=on 4pt off 2pt] (c3) -- node[below,inner sep=2pt] {\scriptsize новое} (c4);
+\draw[gi alternate] (c4) -- (c5);
+\draw[gi match] (c5) -- (c0);
+\draw[gi edge,densely dotted] (c0) -- (c3);
+\node[gi note] at (0,-2.2) {$C$; пунктир $yz\in E(G)$};
+\end{scope}
+\node[gi note] at (3.0,0) {$\Longrightarrow$};
+\begin{scope}[shift={(6,0)}]
+\foreach \i/\a/\l in {0/90/y,1/30/w,2/-30/p,3/-90/z,4/-150/x,5/150/q}
+  \node[gi vertex] (d\i) at (\a:1.4) {$\l$};
+\draw[gi match] (d4) -- (d5);
+\draw[gi edge] (d5) -- (d0);
+\draw[gi match] (d0) -- (d3);
+\draw[gi edge] (d3) -- (d2);
+\draw[gi match] (d2) -- (d1);
+\draw[gi removed] (d0) -- (d1);
+\draw[gi removed] (d3) -- (d4);
+\node[gi note] at (0,-2.2) {$P=x\,q\,y\,z\,p\,w$};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

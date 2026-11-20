@@ -1,0 +1,68 @@
+\documentclass[10pt,a4paper]{article}
+\input{config.tex}
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+{\LARGE\bfseries Дискретная математика · III семестр}\par\medskip
+{\Large Теория графов. Коллоквиум 2}\par\medskip
+{\large Паросочетания · Теория Рамсея · Совершенные графы}
+\end{center}
+
+\clearpage
+\tableofcontents
+\clearpage
+\phantomsection
+\section*{Обозначения и соглашения}
+\markboth{Обозначения и соглашения}{}
+\addcontentsline{toc}{section}{Обозначения и соглашения}
+\begingroup
+\setlength{\parskip}{4pt}
+\titlespacing*{\subsection}{0pt}{9pt}{4pt}
+\tcbset{before skip=4pt,after skip=4pt,top=4pt,bottom=4pt}
+\setlist[description]{font=\normalfont\bfseries,leftmargin=0pt,
+  labelindent=0pt,style=unboxed,itemsep=3pt,parsep=0pt}
+\input{notation.tex}
+\endgroup
+\ticket{Теорема Бержа о дополняющих цепях}
+\label{ticket:1}
+\input{tickets/01.tex}
+\ticket{Теорема Кёнига: паросочетание и вершинное покрытие в двудольном графе}
+\label{ticket:2}
+\input{tickets/02.tex}
+\ticket{Вершинные покрытия, независимые множества и рёберные покрытия}
+\label{ticket:3}
+\input{tickets/03.tex}
+\ticket{Теорема Татта о совершенном паросочетании}
+\label{ticket:4}
+\input{tickets/04.tex}
+\ticket{Формула Бержа для дефицита графа}
+\label{ticket:5}
+\input{tickets/05.tex}
+\ticket{Декомпозиция Эдмондса–Галлаи}
+\label{ticket:6}
+\input{tickets/06.tex}
+\ticket{Числа Рамсея \texorpdfstring{\(R(m,n)\)}{R(m,n)}}
+\label{ticket:7}
+\input{tickets/07.tex}
+\ticket{Теорема Эрдёша–Секереша}
+\label{ticket:8}
+\input{tickets/08.tex}
+\ticket{Нижняя оценка Эрдёша и её усиления}
+\label{ticket:9}
+\input{tickets/09.tex}
+\ticket{Несколько цветов. Теорема Гринвуда–Глисона}
+\label{ticket:10}
+\input{tickets/10.tex}
+\ticket{Графовые числа Рамсея}
+\label{ticket:11}
+\input{tickets/11.tex}
+\ticket{Число Рамсея для дерева и клики}
+\label{ticket:12}
+\input{tickets/12.tex}
+\ticket{Интервальные графы и графы сравнимости}
+\label{ticket:13}
+\input{tickets/13.tex}
+\ticket{Слабая теорема о совершенных графах}
+\label{ticket:14}
+\input{tickets/14.tex}
+\end{document}

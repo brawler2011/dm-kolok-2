@@ -1,0 +1,16 @@
+\begin{graphillustration}{Экстремальная раскраска при $m=3$, $n=4$: две группы по 3 вершины. Внутри групп цвет 1 (сплошные) — компоненты из $n-1=3$ вершин, $T_4$ не помещается; между группами цвет 2 (штриховые) — двудольный граф без треугольника.}{fig:12-chvatal}
+\begin{tikzpicture}[font=\small]
+\node[gi vertex] (a1) at (0,1.4) {};
+\node[gi vertex] (a2) at (-0.8,0) {};
+\node[gi vertex] (a3) at (0.8,0) {};
+\node[gi vertex] (b1) at (4,1.4) {};
+\node[gi vertex] (b2) at (3.2,0) {};
+\node[gi vertex] (b3) at (4.8,0) {};
+\foreach \x in {a1,a2,a3} \foreach \y in {b1,b2,b3} \draw[gi c2] (\x) -- (\y);
+\draw[gi c1] (a1) -- (a2) -- (a3) -- (a1);
+\draw[gi c1] (b1) -- (b2) -- (b3) -- (b1);
+\node[gi group,fit=(a1)(a2)(a3),label=below:{$K_{n-1}$}] {};
+\node[gi group,fit=(b1)(b2)(b3),label=below:{$K_{n-1}$}] {};
+\node[gi note,anchor=west] at (5.6,0.7) {$(m-1)(n-1)=6$ вершин:\\нет $T_4$ цвета 1,\\нет $K_3$ цвета 2};
+\end{tikzpicture}
+\end{graphillustration}

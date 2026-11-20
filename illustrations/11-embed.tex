@@ -1,0 +1,21 @@
+\begin{graphillustration}{Слева: одноцветная клика $K_4$ содержит любой граф на 4 вершинах, например цикл $C_4$ (толстые рёбра); поэтому $R(C_4,\cdot)\le R(4,\cdot)$. Справа: в любой 2-раскраске $K_3$ два ребра одного цвета образуют $P_3$.}{fig:11-embed}
+\begin{tikzpicture}[font=\small]
+\begin{scope}
+\node[gi vertex] (a) at (0,0) {};
+\node[gi vertex] (b) at (1.6,0) {};
+\node[gi vertex] (c) at (1.6,1.6) {};
+\node[gi vertex] (d) at (0,1.6) {};
+\draw[gi c1] (a) -- (c); \draw[gi c1] (b) -- (d);
+\draw[gi match] (a) -- (b) -- (c) -- (d) -- (a);
+\node[gi note] at (0.8,-0.6) {$C_4\subseteq K_4$ цвета 1};
+\end{scope}
+\begin{scope}[shift={(4.2,0)}]
+\node[gi vertex] (x) at (0,0) {};
+\node[gi vertex] (y) at (1.8,0) {};
+\node[gi vertex] (z) at (0.9,1.5) {};
+\draw[gi c1,line width=2pt] (x) -- (z); \draw[gi c1,line width=2pt] (z) -- (y);
+\draw[gi c2] (x) -- (y);
+\node[gi note] at (0.9,-0.6) {одноцветный $P_3$};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

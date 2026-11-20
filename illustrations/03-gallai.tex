@@ -1,0 +1,31 @@
+\begin{graphillustration}{Обе половины доказательства Галлаи. Слева: максимальное паросочетание $M$ (толстые) и по ребру (штрих) для каждой свободной вершины; $|M\cup F|=2+2=n-\alpha'$. Справа: минимальное рёберное покрытие — лес звёзд; по ребру из каждой компоненты (толстые) дают паросочетание.}{fig:03-gallai}
+\begin{tikzpicture}[font=\small]
+\begin{scope}
+\node[gi vertex] (b) at (1.2,0.5) {$b$};
+\node[gi vertex] (a) at (0,0.5) {$a$};
+\node[gi free] (c) at (1.2,1.6) {$c$};
+\node[gi free] (u) at (1.2,-0.6) {$u$};
+\node[gi vertex] (d) at (2.6,0.5) {$d$};
+\node[gi vertex] (e) at (3.8,0.5) {$e$};
+\draw[gi match] (a) -- (b); \draw[gi match] (d) -- (e);
+\draw[gi edge] (b) -- (d);
+\draw[gi alternate] (c) -- (b); \draw[gi alternate] (u) -- (b);
+\node[gi note] at (1.9,-1.4) {$M\cup F$, $F=\{cb,ub\}$};
+\end{scope}
+\begin{scope}[shift={(6.6,0)}]
+\node[gi vertex] (s) at (0,0.5) {};
+\node[gi vertex] (s1) at (-0.8,1.2) {};
+\node[gi vertex] (s2) at (-0.8,-0.2) {};
+\node[gi vertex] (s3) at (0.9,1.2) {};
+\draw[gi match] (s) -- (s1); \draw[gi edge] (s) -- (s2); \draw[gi edge] (s) -- (s3);
+\node[gi vertex] (t) at (2.0,0.5) {};
+\node[gi vertex] (t1) at (3.0,0.5) {};
+\draw[gi match] (t) -- (t1);
+\node[gi vertex] (r) at (4.2,1.0) {};
+\node[gi vertex] (r1) at (4.2,0) {};
+\node[gi vertex] (r2) at (5.1,0.5) {};
+\draw[gi match] (r) -- (r2); \draw[gi edge] (r1) -- (r2);
+\node[gi note] at (2.2,-1.4) {$H=(V,L)$: $\comp(H)=3$, $e(H)\ge n-3$};
+\end{scope}
+\end{tikzpicture}
+\end{graphillustration}

@@ -1,0 +1,16 @@
+\begin{graphillustration}{Множество Татта: после удаления $S=\{s\}$ остаются три нечётные компоненты, а партнёров в $S$ хватит только одной. Совершенного паросочетания нет.}{fig:04-tutte-set}
+\begin{tikzpicture}[font=\small]
+\node[gi selected] (s) at (0,0) {$s$};
+\node[gi vertex] (a) at (-2.2,-1.4) {};
+\node[gi vertex] (b1) at (0,-1.4) {};
+\node[gi vertex] (b2) at (-0.6,-2.4) {};
+\node[gi vertex] (b3) at (0.6,-2.4) {};
+\node[gi vertex] (c) at (2.2,-1.4) {};
+\draw[gi edge] (s) -- (a); \draw[gi edge] (s) -- (b1); \draw[gi edge] (s) -- (c);
+\draw[gi edge] (b1) -- (b2) -- (b3) -- (b1);
+\node[gi group,fit=(a)] {};
+\node[gi group,fit=(b1)(b2)(b3)] {};
+\node[gi group,fit=(c)] {};
+\node[gi note,anchor=west] at (3.2,-1.2) {$\odd(G-S)=3>1=|S|$};
+\end{tikzpicture}
+\end{graphillustration}
