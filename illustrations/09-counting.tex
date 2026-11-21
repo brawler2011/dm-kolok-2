@@ -1,10 +1,12 @@
-\begin{graphillustration}{Подсчёт в доказательстве Эрдёша: фиксируем $n$ вершин и проводим все $\binom n2$ рёбер между ними (сплошные); остальные пары (серые) выбираем произвольно. Получаем не больше $\binom\nu n2^{\binom\nu2-\binom n2}$ графов с кликой $K_n$.}{fig:09-counting}
+\begin{graphillustration}{Подсчёт в доказательстве Эрдёша: фиксируем $n$ вершин (закрашены) и проводим все $\binom n2$ рёбер между ними (сплошные); остальные пары (серые) выбираем произвольно. Получаем не больше $\binom\nu n2^{\binom\nu2-\binom n2}$ графов с кликой $K_n$.}{fig:09-counting}
 \begin{tikzpicture}[font=\small]
-\foreach \i in {0,...,7} \node[gi small] (v\i) at (90+45*\i:1.4) {};
+\foreach \i in {0,...,7} \coordinate (v\i) at (90+45*\i:1.4);
 \foreach \i in {0,...,7} \foreach \j in {0,...,7} {\ifnum\i<\j \draw[black!18] (v\i) -- (v\j); \fi}
-\draw[gi c1] (v0) -- (v1) -- (v2) -- (v0);
-\draw[gi c1] (v0) -- (v7) -- (v1); \draw[gi c1] (v2) -- (v7);
-\node[gi group,fit=(v0)(v1)(v2)(v7),label=above:{$n$ вершин}] {};
-\node[gi note,anchor=west] at (2.2,0) {$\binom\nu n$ выборов клики,\\$2^{\binom\nu2-\binom n2}$ — остальное};
+\draw[gi c1] (v2) -- (v1) -- (v0) -- (v7) -- (v2) -- (v0);
+\draw[gi c1] (v1) -- (v7);
+\foreach \i in {3,...,6} \node[gi small] at (v\i) {};
+\foreach \i in {0,1,2,7} \node[gi small,fill=cbBlue!35,draw=cbBlue] at (v\i) {};
+\node[gi note,anchor=south] at (0,1.65) {$n$ вершин клики};
+\node[gi note,anchor=west] at (2.0,0) {$\binom\nu n$ выборов клики,\\$2^{\binom\nu2-\binom n2}$ — остальное};
 \end{tikzpicture}
 \end{graphillustration}
